@@ -1,12 +1,26 @@
 import Car1 from "../components/CAR1";
-import Car2 from "../components/Car2";
-import Car3 from "../components/Car3";
 import Fueltype from "../components/Fueltype";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import Transmission from "../components/Transmission";
+import Map from "../components/Map";
+import axios from "axios";
+import type Car from "../interfaces/Car"
+import { useEffect, useState} from "react";
 
 export default function Dashboard() {
+    const [cars, setCars]= useState([])
+    useEffect(()=>{
+        getCars()
+    })
+    const getCars = ()=>{
+        axios.get("http://localhost:8000/api/cars").then((response:any)=>{
+            console.log(response.data.data)
+            setCars(response.data.data)
+        }).catch((error:any)=>{
+            console.log(error)
+        })
+    }
     return (
         <>
             <div className="d-flex vh-100 overflow-hidden">
@@ -181,12 +195,11 @@ export default function Dashboard() {
                             </div>
 
                             {/*  CAR 1  */}
-                            <Car1 />
-                            {/*  CAR 2  */}
-                            <Car2 />
-
-                            {/*  CAR 3  */}
-                            <Car3 />
+                            {
+                                cars.map((item)=> <Car1 dato={item} />)
+                            }
+                           
+                            
                         </div>
                         {/*  Map Panel  */}
                         <Map />
@@ -295,6 +308,5 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-        </div >
         </>)
 }

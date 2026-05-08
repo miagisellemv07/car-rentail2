@@ -1,4 +1,8 @@
-export default  function Car1(){
+import type Car from "../interfaces/Car"
+interface Props{
+    dato:Car
+}
+export default  function Car1({dato}:Props){
 return(
 <>
  <div className="car-card">
@@ -16,8 +20,8 @@ return(
                                     className="car-img" alt="Audi A4" />
                                 <div className="d-flex justify-content-between align-items-end mt-3">
                                     <div>
-                                        <h5 className="fw-bold mb-1">Audi A4</h5>
-                                        <div className="text-muted fs-sm">2.0 TFSI Sport (249 hp, Quattro)</div>
+                                        <h5 className="fw-bold mb-1">{dato.model}</h5>
+                                        <div className="text-muted fs-sm">{dato.year}</div>
                                     </div>
                                     <div className="text-end">
                                         <span className="fs-5 fw-bold">$24.59</span><span className="text-muted fs-sm"> / hour</span>
