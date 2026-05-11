@@ -1,9 +1,11 @@
 export default interface Car{
-        id: string,
+      id: string,
       brand_id: string,
       model: string,
       year: string,
       color: string,
+      img:string,
+      price:number,
       license_plate:string,
       mileage:string,
       lat: string,

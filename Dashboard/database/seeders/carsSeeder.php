@@ -20,6 +20,9 @@ class carsSeeder extends Seeder
         'model'=>'Tacoma',
         'year'=>2020,
         'color'=>'Rosa',
+        'img'=>'car1.jpg',
+        'img'=>'car2.jpg',
+        'price'=>24.25,
         'license_plate'=>'MIV34G',
         'mileage'=>76478365,
         'lat'=>54.45,
@@ -34,6 +37,9 @@ class carsSeeder extends Seeder
         $dato->year=2020;
         $dato->model ='Corolla';
         $dato->color='Rosa';
+        $dato->img='car1.jpg';
+        $dato->img='car2.jpg';
+        $dato->price=24.25;
         $dato->license_plate='MIV35G';
         $dato->mileage=76478365;
         $dato->lat=54.45;
