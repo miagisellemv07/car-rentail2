@@ -1,6 +1,18 @@
 export default interface Car{
-    brand_id:string,
-    color:string,
-    created_at:string,
-    id:number
+        id: string,
+      brand_id: string,
+      model: string,
+      year: string,
+      color: string,
+      license_plate:string,
+      mileage:string,
+      lat: string,
+      lng: string,
+      is_premiun:string,
+      rental_count: string,
+      daily_rate: string,
+      status: string,
+      created_at: string,
+      updated_at: string,
+      brand: any
 }
